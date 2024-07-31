@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    input[type="text"],
+    input[type="date"],
+    select,
+    input[type="number"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Booking Form</h2>
+    <form id="bookingForm" action="#" method="post">
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from" required>
+
+        <label for="to">To:</label>
+        <select name="to" id="to" required>
+            <option value="">Select Destination</option>
+            <option value="bali">Bali</option>
+            <option value="shimla">Shimla</option>
+            <option value="manali">Manali</option>
+            <option value="agra">Agra</option>
+            <option value="massorie">Massorie</option>
+            <option value="kerla">Kerla</option>
+            <option value="andaman">Andaman</option>
+            <option value="rishikesh">Rishikesh</option>
+            <option value="shrinagar">Shrinagar</option>
+            <option value="goa">Goa</option>
+            <option value="jammu_kashmir">Jammu & Kashmir</option>
+        </select>
+
+        <label for="journeyStartDate">Journey Start Date:</label>
+        <input type="date" id="journeyStartDate" name="journeyStartDate" required>
+
+        <label for="journeyEndDate">Journey End Date:</label>
+        <input type="date" id="journeyEndDate" name="journeyEndDate" required>
+
+        <label for="members">Number of Members:</label>
+        <input type="number" id="members" name="members" min="1" required>
+
+        <label for="class">Class:</label>
+        <select name="class" id="class" required>
+            <option value="">Select Class</option>
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="premium_economy">Premium Economy</option>
+            <option value="first">First</option>
+        </select>
+
+        <input type="submit" value="Book Now">
+    </form>
+</div>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get form values
+        var from = document.getElementById('from').value;
+        var to = document.getElementById('to').value;
+        var journeyStartDate = document.getElementById('journeyStartDate').value;
+        var journeyEndDate = document.getElementById('journeyEndDate').value;
+        var members = document.getElementById('members').value;
+        var travelClass = document.getElementById('class').value;
+
+        // You can perform additional validation here before sending the data
+        // For simplicity, let's just log the values for now
+        console.log("From:", from);
+        console.log("To:", to);
+        console.log("Journey Start Date:", journeyStartDate);
+        console.log("Journey End Date:", journeyEndDate);
+        console.log("Number of Members:", members);
+        console.log("Class:", travelClass);
+
+        // Here you can send the form data to your server using AJAX or any other method
+        // For demonstration purposes, let's just alert a success message
+        alert("Booking successful!");
+    });
+</script>
+
+</body>
+</html>
